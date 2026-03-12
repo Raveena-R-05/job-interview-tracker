@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Job Search - Job Interview Tracker</title>
+  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="jobs.css">
+</head>
+<body>
+  <div class="container">
+    <header>
+      <h1>🔍 Job Search</h1>
+      <p>Find your dream job opportunity</p>
+      <nav class="nav-links">
+        <a href="index.html">Candidates</a>
+        <a href="jobs.html" class="active">Jobs</a>
+      </nav>
+    </header>
+
+    <div class="card">
+      <h2>Search Jobs</h2>
+      <form id="jobSearchForm">
+        <div class="search-row">
+          <div class="form-group">
+            <label for="searchTitle">Job Title</label>
+            <input type="text" id="searchTitle" placeholder="e.g., Software Engineer">
+          </div>
+
+          <div class="form-group">
+            <label for="searchLocation">Location</label>
+            <select id="searchLocation">
+              <option value="">All Locations</option>
+              <option value="Chennai">Chennai</option>
+              <option value="Coimbatore">Coimbatore</option>
+              <option value="Bangalore">Bangalore</option>
+              <option value="Hyderabad">Hyderabad</option>
+              <option value="Pune">Pune</option>
+              <option value="Mumbai">Mumbai</option>
+              <option value="Delhi">Delhi</option>
+              <option value="Noida">Noida</option>
+              <option value="Gurgaon">Gurgaon</option>
+              <option value="Kolkata">Kolkata</option>
+            </select>
+          </div>
+
+          <div class="form-group">
+            <label for="searchExperience">Experience Level</label>
+            <select id="searchExperience">
+              <option value="">All Experience Levels</option>
+              <option value="0 years (Freshers)">0 years (Freshers)</option>
+              <option value="1+ years">1+ years</option>
+              <option value="2+ years">2+ years</option>
+              <option value="3+ years">3+ years</option>
+              <option value="5+ years">5+ years</option>
+            </select>
+          </div>
+        </div>
+
+        <div class="search-buttons">
+          <button type="submit" class="btn-search">🔍 Search Jobs</button>
+          <button type="button" id="clearFiltersBtn" class="btn-clear">Clear Filters</button>
+        </div>
+      </form>
+    </div>
+
+    <div class="card">
+      <h2>Available Jobs</h2>
+      <div id="jobCount" class="job-count"></div>
+      <div class="table-container">
+        <table id="jobTable">
+          <thead>
+            <tr>
+              <th>Job Title</th>
+              <th>Location</th>
+              <th>Experience Required</th>
+            </tr>
+          </thead>
+          <tbody id="jobTableBody">
+            <!-- Jobs will be loaded here -->
+          </tbody>
+        </table>
+        <div id="emptyState" class="empty-state">
+          <p>No jobs found. Try a different search term.</p>
+        </div>
+      </div>
+      
+      <div class="pagination" id="pagination">
+        <button id="prevBtn" class="pagination-btn" disabled>← Previous</button>
+        <span class="page-info" id="pageInfo">Page 1 of 1</span>
+        <button id="nextBtn" class="pagination-btn" disabled>Next →</button>
+      </div>
+    </div>
+  </div>
+
+  <script src="jobs.js"></script>
+</body>
+</html>
